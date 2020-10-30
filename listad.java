@@ -20,13 +20,13 @@ public class listad<t>
 
     private nodod<t> last() 
     {
-        nodod<t> aux = root;
-        while (aux.getNext() != null) 
+        nodod<t> currentNode = root;
+        while (currentNode.getNext() != null) 
         {
-            aux = aux.getNext();
+            currentNode = currentNode.getNext();
         }
 
-        return aux;
+        return currentNode;
     }
 
     public void addFirst(t dato) 
