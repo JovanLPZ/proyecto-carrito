@@ -4,13 +4,17 @@ public class appCarrito
 {
     public static Scanner leer = new Scanner(System.in);
 
-    private static listad<Integer> lista = new listad<Integer>();
+    private static listad<carrito> carritos = new listad<carrito>();
+    private static listad<producto> productos = new listad<producto>();
 
 
     public static void main(String[] args) 
     {
         
         int opcion = 0;
+        String nombre = "";
+        float total = 0;
+
         do
         {
             opcion = menu();
@@ -19,7 +23,10 @@ public class appCarrito
             {
                 case 1: //Nuevo carrito
                
-               
+                System.out.println("Nombre del carrito: ");
+                nombre = leer.next();
+                
+                carritos.add(new carrito(nombre));
                 
                 break;
 
