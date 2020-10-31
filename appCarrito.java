@@ -23,7 +23,7 @@ public class appCarrito
             {
                 case 1: //Nuevo carrito
                
-                System.out.println("Nombre del carrito: ");
+                System.out.print("Nombre del carrito: ");
                 nombre = leer.next();
                 
                 carritos.add(new carrito(nombre));
@@ -32,7 +32,23 @@ public class appCarrito
 
                 case 2: //Eliminar carrito
 
-            
+                System.out.print("Nombre del carrito: ");
+                nombre = leer.next();
+
+
+                for(int i = 0; i < carritos.size(); i++)
+                {                 
+                    if(carritos.get(i).getNombre().equals(nombre))
+                    {
+                        carritos.remove(i);
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println("Carrito no encontrado");
+                        break;
+                    }
+                }
 
                 break;
 
@@ -57,6 +73,16 @@ public class appCarrito
 
                 break;
 
+                case 8: //Ver lista
+
+                System.out.println();
+                for (int i = 0; i < carritos.size(); i++) 
+                {
+                    System.out.println(carritos.get(i).getNombre());
+                }
+
+                break;
+
                 case 0: //Terminar programa
                 System.out.println("Terminar programa");
 
@@ -72,16 +98,17 @@ public class appCarrito
 
     public static int menu()
     {
-        
+        System.out.println("\n**********************");
         System.out.println("\nMenu de opciones\n");
-        System.out.println("1.- Nuevo carrito\n");
-        System.out.println("2.- Eliminar carrito\n");
-        System.out.println("3.- Agregar al carrito\n");
-        System.out.println("4.- Cambiar producto\n");
-        System.out.println("5.- Quitar del carrito\n");
-        System.out.println("6.- Total del carrito\n");
-        System.out.println("7.- Total global\n");
-        System.out.println("0.- Salir\n");
+        System.out.println("1.- Nuevo carrito"); //Hecha
+        System.out.println("2.- Eliminar carrito"); //Hecha
+        System.out.println("3.- Agregar al carrito");
+        System.out.println("4.- Cambiar producto");
+        System.out.println("5.- Quitar del carrito");
+        System.out.println("6.- Total del carrito");
+        System.out.println("7.- Total global");
+        System.out.println("8.- Ver lista"); //Hecha
+        System.out.println("0.- Salir");
         System.out.print("\nOpcion: ");
         
         return leer.nextInt();
