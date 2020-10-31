@@ -60,7 +60,7 @@ public class listad<t>
     {
         if(PN != null)
         {
-            PN.setNext(new nodod<t>(dato, PN, PN.getNext()));
+            PN.setNext(new nodod<t>(PN, dato, PN.getNext()));
 
             if(PN.getNext().getNext() != null)
             PN.getNext().getNext().setPrevious(PN.getNext());
