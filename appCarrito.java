@@ -53,8 +53,29 @@ public class appCarrito
                 break;
 
                 case 3: //Agregar al carrito
-             
-
+                      System.out.print("Nombre del carrito: ");
+	                       nombre = leer.next();
+	                       for(int i = 0; i < carritos.size(); i++)
+	                        {                 
+	                         if(carritos.get(i).getNombre().equals(nombre))
+	                           {
+	                            System.out.println("Agregar Producto");
+	     	    	            System.out.println("Clave: ");
+	     	    	            cve=leer.nextInt();
+	     	    	            System.out.println("Descripcion: ");
+	     	    	            desc=leer.next();
+	     	    	            System.out.println("Precio: ");
+	     	    	            precio=leer.nextInt();
+	     	    	            carritos.get(i).PrAdd(new Producto (cve,desc,precio));
+	     	    	            carritos.get(i).setCantidad(carritos.get(i).getCantidad()+1);
+	     	    	            break;
+	                           }
+	                       else
+	                           {
+	                               System.out.println("Carrito no encontrado");
+	                               break;
+	                           }
+                          }  
                 break;
 
                 case 4: //Cambiar producto
@@ -70,8 +91,14 @@ public class appCarrito
                 break;
 
                 case 7: //Total global
-
-                break;
+                    total=0;
+	                	for(int i=0;i<carritos.size();i++) {
+	                		total+=carritos.get(i).getTotal();
+	                		
+	                	}
+	                	System.out.println("El total global es: "+total);
+               
+                    break;
 
                 case 8: //Ver lista
 
