@@ -38,6 +38,7 @@ public class appCarrito
 
                     for (int i = 0; i < carritos.size(); i++) {
                         if (carritos.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                            System.out.println("Carrito \""+carritos.get(i).getNombre()+"\" eliminado");
                             carritos.remove(i);
                             eliminado = true;
                             break;
