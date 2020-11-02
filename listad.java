@@ -71,7 +71,7 @@ public class listad<t>
     {
         nodod<t> aux = start();
         int cont = 0;
-        while (aux.getNext() != null && cont < (indice-1)) 
+        while (aux.getNext() != null && cont < (indice)) 
         {
             aux = aux.getNext();
             cont++;
