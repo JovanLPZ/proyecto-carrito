@@ -56,5 +56,11 @@ public class carrito
     public void setCantidadProducto(int cantidadProducto) {
         this.cantidadProducto = cantidadProducto;
     }
+    
+    public void removePr(int indice) 
+    {
+	    	total-=productos.get(indice).getPrecio();
+	    	productos.remove(indice);
+	}
 
 }
