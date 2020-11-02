@@ -16,6 +16,7 @@ public class carrito
     public void addProducto(producto producto) 
     {
         productos.add(producto);
+        total+=producto.getPrecio();
     }
     
     public String getNombre() 
@@ -56,7 +57,4 @@ public class carrito
         this.cantidadProducto = cantidadProducto;
     }
 
-    
-
-    
 }
