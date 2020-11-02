@@ -94,7 +94,34 @@ public class appCarrito
                 break;
 
                 case 5: //Quitar del carrito
-                
+			    System.out.print("Nombre del carrito: ");
+	                    nombre = leer.next();
+
+	                       for(int i = 0; i < carritos.size(); i++)
+	                       {                 
+	                          if(carritos.get(i).getNombre().equals(nombre))
+	                           {
+	                             System.out.println("Que producto quiere eliminar? ");
+	          	             cve=leer.nextInt();
+	          	                  
+	          	                for(int j = 0; j < carritos.get(i).getProductos().size(); j++)
+			                {
+		          	            if(carritos.get(i).getProductos().get(j).getClave()==cve) {
+		          	               carritos.get(i).getProductos().remove(j);
+		          	               System.out.println("Producto Eliminado");
+		          	               break;  
+		          	                  
+		          	         } else if (j == carritos.get(i).getProductos().size()-1){
+		          	                    System.out.println("No cuenta con este producto en el carrito");
+		          	         }break;
+			                 }
+                               }
+	                          else
+	                           {
+	                             System.out.println("Carrito no encontrado");
+	                              break;
+	                           }
+			       }
                 break;
 
                 case 6: //Total del carrito
