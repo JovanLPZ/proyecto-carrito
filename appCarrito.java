@@ -106,7 +106,8 @@ public class appCarrito
                                  if(carritos.get(i).getProductos().get(j).getClave()==clave)
                                  {
                	                    System.out.println("Producto \""+carritos.get(i).getProductos().get(j).getDescripcion()+"\" Eliminado");
-               	                    carritos.get(i).removePr(j);
+                                       carritos.get(i).removePr(j);
+                                       carritos.get(i).setCantidadProducto(carritos.get(i).getCantidadProducto() - 1);
                                     break;  
                                  } 
                                  else if (j == carritos.get(i).getProductos().size()-1)
