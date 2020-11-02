@@ -97,42 +97,42 @@ public class appCarrito
 
                 case 5: // Quitar del carrito
 
-                    System.out.print("Nombre del carrito: ");
-                    nombre = leer.next();
+                System.out.print("Nombre del carrito: ");
+                nombre = leer.next();
 
-                    boolean encontrado = false;
+                boolean encontrado = false;
 
-                    for (int i = 0; i < carritos.size(); i++) 
+                for (int i = 0; i < carritos.size(); i++) 
+                {
+                    if(carritos.get(i).getNombre().equalsIgnoreCase(nombre))
                     {
-                        if(carritos.get(i).getNombre().equalsIgnoreCase(nombre))
-                        {
-                        	  System.out.print("¿Qué producto quiere eliminar (clave)? ");
-                              int clave = leer.nextInt();
+                        	System.out.print("¿Qué producto quiere eliminar (clave)? ");
+                            int clave = leer.nextInt();
              
-                              for(int j = 0; j < carritos.get(i).getProductos().size(); j++)
-                              {
-                                 if(carritos.get(i).getProductos().get(j).getClave()==clave)
-                                 {
+                            for(int j = 0; j < carritos.get(i).getProductos().size(); j++)
+                            {
+                                if(carritos.get(i).getProductos().get(j).getClave()==clave)
+                                {
                	                    System.out.println("Producto \""+carritos.get(i).getProductos().get(j).getDescripcion()+"\" Eliminado");
                                     carritos.get(i).removePr(j);
                                     carritos.get(i).setCantidadProducto(carritos.get(i).getCantidadProducto() - 1);
                                     break;  
-                                 } 
-                                 else if (j == carritos.get(i).getProductos().size()-1)
-                                 {
-               	                     System.out.println("No cuenta con este producto en el carrito");
-                                 }
-                             }
-                             encontrado = true;
-                        } 
+                                } 
+                                else if (j == carritos.get(i).getProductos().size()-1)
+                                {
+               	                    System.out.println("No cuenta con este producto en el carrito");
+                                }
+                            }
+                            encontrado = true;
+                    } 
                        
-                    }
+                }
 
-                    if(encontrado == false) 
-                    {
-                        System.out.println("Carrito no encontrado");
-                        break;
-                    }
+                if(encontrado == false) 
+                {
+                    System.out.println("Carrito no encontrado");
+                    break;
+                }
 
                     break;
 
@@ -142,24 +142,26 @@ public class appCarrito
 
                 case 7: // Total global
 
-                    total = 0;
+                total = 0;
 
-                    for (int i = 0; i < carritos.size(); i++) {
-                        total += carritos.get(i).getTotal();
-                    }
+                for (int i = 0; i < carritos.size(); i++) 
+                {
+                    total += carritos.get(i).getTotal();
+                }
 
-                    System.out.println("El total global es: " + total);
+                System.out.println("El total global es: " + total);
 
-                    break;
+                break;
 
                 case 8: // Ver lista
 
-                    System.out.println();
-                    for (int i = 0; i < carritos.size(); i++) {
-                        System.out.println(carritos.get(i).getNombre());
-                    }
+                System.out.println();
+                for (int i = 0; i < carritos.size(); i++)
+                {
+                    System.out.println(carritos.get(i).getNombre());
+                }
 
-                    break;
+                break;
 
                 case 9: // Ver productos del carrito
 
