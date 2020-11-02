@@ -93,26 +93,24 @@ public class appCarrito
 
                     for (int i = 0; i < carritos.size(); i++) 
                     {
-                        if (carritos.get(i).getNombre().equals(nombre)) 
+                        if(carritos.get(i).getNombre().equals(nombre))
                         {
-                            System.out.println("Que producto quiere eliminar? ");
-                            int clave = leer.nextInt();
-
-                            for (int j = 0; j < carritos.get(i).getProductos().size(); j++) 
-                            {
-                                if (carritos.get(i).getProductos().get(j).getClave() == clave) 
-                                {
-                                    carritos.get(i).getProductos().remove(j);
-                                    System.out.println("Producto Eliminado");
-                                    break;
-
-                                } 
-                                else if (j == carritos.get(i).getProductos().size() - 1) 
-                                {
-                                    System.out.println("No cuenta con este producto en el carrito");
-                                }
-                                break;
-                            }
+                        	  System.out.print("¿Qué producto quiere eliminar (clave)? ");
+                              clave=leer.nextInt();
+             
+                              for(int j = 0; j < carritos.get(i).getProductos().size(); j++)
+                              {
+                                 if(carritos.get(i).getProductos().get(j).getClave()==clave)
+                                 {
+               	                    System.out.println("Producto \""+carritos.get(i).getProductos().get(j).getDescripcion()+"\" Eliminado");
+               	                    carritos.get(i).removePr(j);
+                                    break;  
+                                 } 
+                                 else if (j == carritos.get(i).getProductos().size()-1)
+                                 {
+               	                     System.out.println("No cuenta con este producto en el carrito");
+                                 }
+                             }
                         } 
                         else 
                         {
