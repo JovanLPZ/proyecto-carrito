@@ -260,7 +260,7 @@ public class appCarrito
         System.out.println("1.- Nuevo carrito"); // Hecha
         System.out.println("2.- Eliminar carrito"); // Hecha
         System.out.println("3.- Agregar al carrito"); // Hecha
-        System.out.println("4.- Cambiar producto");
+        System.out.println("4.- Cambiar producto"); // Hecha
         System.out.println("5.- Quitar del carrito"); //Hecha
         System.out.println("6.- Total del carrito");
         System.out.println("7.- Total global"); // Hecha
