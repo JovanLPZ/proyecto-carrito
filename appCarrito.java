@@ -187,6 +187,23 @@ public class appCarrito
 
                 case 6: // Total del carrito
 
+                System.out.print("Nombre del carrito: ");
+                    nombre = leer.next();
+
+                    eliminado = false;
+
+                    for (int i = 0; i < carritos.size(); i++) {
+                        if (carritos.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                            System.out.println("El total del carrito \""+carritos.get(i).getNombre()+"\" es: "+carritos.get(i).getTotal());
+                            eliminado = true;
+                            break;
+                        }
+                    }
+                    if (eliminado == false) {
+                        System.out.println("Carrito no encontrado");
+
+                    }
+
                     break;
 
                 case 7: // Total global
