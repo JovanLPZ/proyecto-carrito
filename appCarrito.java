@@ -5,7 +5,6 @@ public class appCarrito
     public static Scanner leer = new Scanner(System.in);
 
     private static listad<carrito> carritos = new listad<carrito>();
-    private static listad<producto> productos = new listad<producto>();
 
     public static void main(String[] args) 
     {
@@ -192,14 +191,17 @@ public class appCarrito
 
                     eliminado = false;
 
-                    for (int i = 0; i < carritos.size(); i++) {
-                        if (carritos.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                    for (int i = 0; i < carritos.size(); i++) 
+                    {
+                        if (carritos.get(i).getNombre().equalsIgnoreCase(nombre)) 
+                        {
                             System.out.println("El total del carrito \""+carritos.get(i).getNombre()+"\" es: "+carritos.get(i).getTotal());
                             eliminado = true;
                             break;
                         }
                     }
-                    if (eliminado == false) {
+                    if (eliminado == false) 
+                    {
                         System.out.println("Carrito no encontrado");
 
                     }
@@ -279,7 +281,7 @@ public class appCarrito
         System.out.println("3.- Agregar al carrito"); // Hecha
         System.out.println("4.- Cambiar producto"); // Hecha
         System.out.println("5.- Quitar del carrito"); //Hecha
-        System.out.println("6.- Total del carrito");
+        System.out.println("6.- Total del carrito"); //Hecha
         System.out.println("7.- Total global"); // Hecha
         System.out.println("8.- Ver lista"); // Hecha
         System.out.println("9.- Ver productos"); // Hecha
