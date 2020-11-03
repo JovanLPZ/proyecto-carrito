@@ -18,7 +18,11 @@ public class carrito
         productos.add(producto);
         total+=producto.getPrecio();
     }
-    
+    public void addProducto(int indice, producto producto) 
+    {
+        productos.add(indice,producto);
+        total+=producto.getPrecio();
+    }
     public String getNombre() 
     {
         return nombre;
