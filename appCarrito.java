@@ -108,8 +108,7 @@ public class appCarrito
                               {
                                  if(carritos.get(i).getProductos().get(j).getClave()==clave)
                                  {
-                                	 System.out.println("Ingrese los datos del producto que");
-                                	 System.out.println("remplasará al producto: \""+carritos.get(i).getProductos().get(j).getDescripcion()+"\"\n");
+                                	 System.out.println("Ingrese los datos del nuevo producto que reemplazará a: \""+carritos.get(i).getProductos().get(j).getDescripcion()+"\"\n");
                                      System.out.print("Clave: ");
                                      clave = leer.nextInt();
 
